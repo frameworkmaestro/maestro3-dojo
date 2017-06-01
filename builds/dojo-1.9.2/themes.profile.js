@@ -9,6 +9,10 @@ var profile = {
 	    {
 		    name: "default",
 			location: "./themes/default"
+	    },
+	    {
+		    name: "siga-1.9.2",
+			location: "./themes/siga-1.9.2"
 	    }
     ]
 };

@@ -1,5 +1,5 @@
 var profile = {      
-    basePath: "./scripts/", 
+    basePath: "./src/", 
     releaseDir: "../release/scripts",
     layerOptimize: "shrinksafe.keepLines", 
     hasReport: true,
@@ -51,11 +51,83 @@ var profile = {
     ], 
 
 	layers: {
-        "manager/main": {
+		"dojo/dojo": {
+			include: [
+			"dojo/request/default",
+			"dojo/_base/fx",
+			"dojo/dom-form",
+			"dojo/i18n",
+			"dojo/promise/tracer",
+			"dojo/errors/RequestError",
+			"dojo/_base/html",
+			"dojo/_base/kernel",
+			"dojo/io-query",
+			"dojo/_base/Deferred",
+			"dojo/NodeList-dom",
+			"dojo/query",
+			"dojo/has",
+			"dojo/_base/loader",
+			"dojo/json",
+			"dojo/_base/declare",
+			"dojo/dom",
+			"dojo/_base/browser",
+			"dojo/selector/acme",
+			"dojo/errors/RequestTimeoutError",
+			"dojo/dom-geometry",
+			"dojo/dom-style",
+			"dojo/dom-prop",
+			"dojo/when",
+			"dojo/dom-attr",
+			"dojo/dom-construct",
+			"dojo/request/xhr",
+			"dojo/text",
+			"dojo/keys",
+			"dojo/domReady",
+			"dojo/_base/lang",
+			"dojo/request/util",
+			"dojo/Evented",
+			"dojo/mouse",
+			"dojo/_base/xhr",
+			"dojo/topic",
+			"dojo/loadInit",
+			"dojo/dojo",
+			"dojo/_base/unload",
+			"dojo/Deferred",
+			"dojo/_base/NodeList",
+			"dojo/request",
+			"dojo/_base/Color",
+			"dojo/promise/instrumentation",
+			"dojo/selector/_loader",
+			"dojo/promise/Promise",
+			"dojo/request/watch",
+			"dojo/on",
+			"dojo/_base/sniff",
+			"dojo/errors/create",
+			"dojo/_base/array",
+			"dojo/_base/json",
+			"dojo/_base/window",
+			"dojo/dom-class",
+			"dojo/_base/config",
+			"dojo/main",
+			"dojo/_base/event",
+			"dojo/sniff",
+			"dojo/request/handlers",
+			"dojo/aspect",
+			"dojo/ready",
+			"dojo/_base/connect",
+			"dojo/errors/CancelError",
+			"dojo/selector/lite"
+			]
+		},
+        "manager/dijit": {
             include: [
 			"dojo/cldr/nls/currency",
 			"dojo/cldr/nls/number",
 			"dojo/cldr/nls/gregorian",
+			"dojo/selector/lite",
+			"dojo/data/ItemFileReadStore",
+			"dojo/data/ItemFileWriteStore",
+			"dojo/data/ObjectStore",
 			"dojo/fx/Toggler",
             "dijit/_base",
             "dijit/_Widget",
@@ -84,9 +156,6 @@ var profile = {
             "dijit/TooltipDialog",
             "dijit/_editor/plugins/FontChoice",
             "dijit/_editor/plugins/TextColor",
-			"dojox/editor/plugins/PasteFromWord",
-            "dojox/editor/plugins/TablePlugins",
-			"dojox/widget/Standby",
             "dijit/form/Button",
             "dijit/form/CheckBox",
             "dijit/form/ComboBox",
@@ -112,15 +181,6 @@ var profile = {
             "dijit/layout/TabContainer",
             "dijit/layout/TabContainer",
             "dijit/layout/BorderContainer",
-            "dojox/layout/ContentPane",
-            "dojox/form/Uploader",
-            "dojox/form/uploader/FileList",
-            "dojox/form/uploader/plugins/IFrame",
-            "dojox/validate",
-            "dojox/validate/br",
-            "dojox/validate/web",
-            "dojox/html/styles",
-			"dojox/widget/Standby",
 			"xstyle/css",
 			"xstyle/load-css",
 			"xstyle/has-class",
@@ -130,7 +190,36 @@ var profile = {
             "dgrid/Keyboard", 
 			"dgrid/util/misc",
 			"dgrid/util/mouse",	
-			"dgrid/util/touch",
+			"dgrid/util/touch"
+            ],
+			exclude: [
+				"dojo/dojo"
+			],
+			includeLocales: ["en", "pt", "pt-br"] 
+		},
+        "manager/dojox": {
+            include: [
+			"dojox/editor/plugins/PasteFromWord",
+            "dojox/editor/plugins/TablePlugins",
+			"dojox/widget/Standby",
+            "dojox/layout/ContentPane",
+            "dojox/form/Uploader",
+            "dojox/form/uploader/FileList",
+            "dojox/form/uploader/plugins/IFrame",
+            "dojox/validate",
+            "dojox/validate/br",
+            "dojox/validate/web",
+            "dojox/html/styles",
+			"dojox/widget/Standby"
+            ],
+			exclude: [
+				"dojo/dojo",
+				"manager/dijit"
+			],
+			includeLocales: ["en", "pt", "pt-br"] 
+		},
+        "manager/main": {
+            include: [
             "manager/Utils",
             "manager/Hash",
             "manager/MD5",
@@ -167,7 +256,12 @@ var profile = {
             "manager/Tree",
             "manager/Window"
             ],
+			exclude: [
+				"dojo/dojo",
+				"manager/dijit",
+				"manager/dojox"
+			],
 			includeLocales: ["en", "pt", "pt-br"] 
 		}
-    }
+	}
 };

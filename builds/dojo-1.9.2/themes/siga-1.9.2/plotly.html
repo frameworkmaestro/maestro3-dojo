@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>{{$page->title}}</title>
+        <link rel="stylesheet" type="text/css" href="{{$manager->getThemeURL()}}style.css">
+        <link rel="stylesheet" type="text/css" href="{{$manager->getStaticURL($manager->getApp(), 'css/style.css')}}">
+
+        <meta name="Generator" content="Manager 1.0; http://www.maestro.org.br">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script type="text/javascript" src="{{$manager->getBaseURL()}}/public/scripts/jquery/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="{{$manager->getBaseURL()}}/public/scripts/jquery/jquery.maskedinput.js"></script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        {{if $manager->getOptions('mode') eq 'DEV'}}
+        <script type="text/javascript"  src="{{$manager->getBaseURL()}}/public/scripts/dojo/dojo.js" data-dojo-config="usePlainJson:true,parseOnLoad:true,locale:'pt-br'"></script>
+        <script type="text/javascript"  src="{{$manager->getBaseURL()}}/public/scripts/manager/main.js"></script>
+        {{else}}
+        <script type="text/javascript"  src="{{$manager->getBaseURL()}}/public/scripts/dojo/dojo.js" data-dojo-config="usePlainJson:true,parseOnLoad:true,locale:'pt-br'"></script>
+        <script type="text/javascript"  src="{{$manager->getBaseURL()}}/public/scripts/manager/main.js"></script>
+	
+        {{/if}}
+    </head>
+    <body class="mBody claro">
+		<script type="text/javascript"  src="{{$manager->getThemeURL()}}/scripts/theme.js"></script>
+        <!-- basic preloader: -->
+        <div id="loader"><div id="loaderInner" style="direction:ltr;">Carregando.... </div></div>
+
+        {{if ($manager->getLogin())}}
+        <div id="menuLayout" class="container">
+            <!--{{$page->fetch('userbar')}}-->
+            {{$page->fetch('quickaccess')}}
+            <hr>
+            {{$page->fetch('usermenu')}}
+        </div>
+        {{else}}
+        <div id="topLayout">
+            <div id="header">
+                <div id="elementLogo">
+                </div>
+                <div id="elementUserBar"  dojoType="Manager.ElementPane" href="{{$manager->getAppURL()}}/login/sigauserbar">
+                </div>
+            </div>
+        </div>
+        {{/if}}
+        <div id="bodyLayout">
+            <div id="centerPane" dojoType="Manager.ElementPane" region="center">
+                {{$page->generate('content')}}
+            </div>
+        </div>
+    </body>
+</html>

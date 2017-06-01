@@ -16,11 +16,11 @@ Estrutura de diretórios usada no projeto
 --
 
 . Abrir o source do Dojo (dojo-release-1.9.2-src) em uma pasta temporária
-. Do source do Dojo, copiar as pastas "dojo", "dijit", "dojox" e "util" para a pasta "dojo-1.9.2\scripts"
+. Do source do Dojo, copiar as pastas "dojo", "dijit", "dojox" e "util" para a pasta "dojo-1.9.2\src"
 . A estrutura da pasta "dojo-1.9.2" deve estar assim:
 
-├── maestro_dev\source\js_themes\dojo-1.9.2
-│   ├── scripts 
+├── builds\dojo-1.9.2
+│   ├── src 
 │   │   ├── dgrid  (scripts do DGrid, que usa o Dojo)
 │   │   ├── xstyle
 │   │   ├── jquery
@@ -36,9 +36,12 @@ Estrutura de diretórios usada no projeto
 │   │	    ├── css
 │   │	    ├── scripts
 │   │       └── *.* (varios arquivos do tema)
-│   ├── resource 
+│   ├── resources 
 │   │   └── icons (várias distribuições de icones)
 │   ├── release (será preenchida após o build)
+│   │   ├── scripts
+│   │   └── themes
+│   ├── dist (será preenchida após o build)
 │   │   ├── scripts
 │   │   └── themes
 │   ├── buildDojo.bat
@@ -49,10 +52,13 @@ Estrutura de diretórios usada no projeto
 
 ---
 Para compilar Dojo/Manager
+. os arquivos compilados estão na pasta release/scripts
+. os arquivos a serem copiados para o tema estão na pasta dist/scripts
 ---
 buildDojo.bat
 
 ---
 Para compilar os temas
+. os arquivos para o tema são criados na pasta release/themes
 ---
 buildThemes.bat
