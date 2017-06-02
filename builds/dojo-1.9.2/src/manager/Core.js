@@ -194,10 +194,12 @@ define("manager/Core", [
             },
             disconnect: function (element) {
                 if (element != '') {
-                    array.forEach(this.connections[element], function(handler) {
-                        handler.remove;
-                    });
-                    this.connections[element].length = 0;
+                    if (this.connections[element] !== undefined) {
+                        array.forEach(this.connections[element], function (handler) {
+                            handler.remove;
+                        });
+                        this.connections[element].length = 0;
+                    }
                 }
             },
             submit: function(idForm) {
