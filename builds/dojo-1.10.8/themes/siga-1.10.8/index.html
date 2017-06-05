@@ -1,0 +1,30 @@
+{{$page->fetch('header')}}
+
+<!-- basic preloader: -->
+<div id="loader"><div id="loaderInner" style="direction:ltr;">Carregando.... </div></div>
+        
+{{if ($manager->getLogin())}}
+    <div id="menuLayout" class="container">
+        <!--{{$page->fetch('userbar')}}-->
+        {{$page->fetch('quickaccess')}}
+        <hr>
+        {{$page->fetch('usermenu')}}
+    </div>
+{{else}}
+    <div id="topLayout">
+        <div id="header">
+            <div id="elementLogo">
+            </div>
+            <div id="elementUserBar"  dojoType="Manager.ElementPane" href="{{$manager->getAppURL()}}/login/sigauserbar">
+            </div>
+        </div>
+    </div>
+{{/if}}
+<div id="bodyLayout">
+    <div id="centerPane" dojoType="Manager.ElementPane" region="center">
+        {{$page->generate('content')}}
+    </div>
+</div>
+
+
+{{$page->fetch('footer')}}
