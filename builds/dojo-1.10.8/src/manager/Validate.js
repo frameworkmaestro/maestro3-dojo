@@ -82,6 +82,8 @@ require(["dojox/validate/_base","dojo/_base/lang","dijit/registry"], function(va
                     }
                 }
             }
+            if(value.slice(-2)==='YY')
+                return true;
             return false;
         },
         
