@@ -30,6 +30,11 @@
     padding-left: 25px;
 }
 
+.mPrompt .titleAlert {
+    background-color: #eea731;
+    padding-left: 25px;
+}
+
 .mPrompt .titleConfirmation {
     background-color:   @prompt-title-confirmation-background-color;
     padding-left: 25px;
@@ -41,7 +46,7 @@
 }
 
 .mPrompt .mBoxPaneActionBar {
-    text-align:center;
+    text-align: center;
 }
 
 .mPrompt .mBoxPaneActionBar div.button {
@@ -49,32 +54,32 @@
 }
 
 .mPrompt .mBoxPaneContentArea {
-    height: 50px;
+    height: auto;
 }
 
 .mPrompt .mBoxPaneContentArea .text {
     font-weight: bold;
+    height: auto;
+    margin: 0;
+    padding-left: 50px;
     text-align: left;
-    vertical-align: middle;
-    width: 320px;
-    height: 50px;
-    overflow: auto;
+    width: 314px;
 }
 
-.mPrompt .mBoxPaneContentArea .text ul {
-    padding: 0px;
-    margin: 0px;
-    list-style-type: none;
+.mPromptBox ul {
+    margin: 0;
+    padding: 0;
 }
 
 .mPrompt .mBoxPaneContentArea .icon {
     width: 32px;
     height: 32px;
-    float:left;
+    float: left;
     margin-right: 15px;
     margin-bottom: 9px;
     margin-top: 9px;
     background-repeat: no-repeat;
+    position: absolute;
 }
 
 .mPrompt .mBoxPaneContentArea .iconError {
@@ -89,7 +94,22 @@
     background-image: url(@image-prompt-confirmation);
 }
 
+.mPrompt .mBoxPaneContentArea .iconAlert {
+    background-image: url("@image-prompt-alert");
+}
+
 .mPrompt .mBoxPaneContentArea .iconQuestion {
     background-image: url(@image-prompt-question);
+}
+
+.mPrompt .mBoxPaneContentArea {
+    min-height: 50px;
+    max-height: 100px;
+    overflow: auto;
+}
+
+.mPromptBox li {
+    text-align: left;
+    width: 310px;
 }
 

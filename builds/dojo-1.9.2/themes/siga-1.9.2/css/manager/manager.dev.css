@@ -6315,6 +6315,10 @@ contact mjames@gmail.com
   background-color: #008800;
   padding-left: 25px;
 }
+.mPrompt .titleAlert {
+  background-color: #eea731;
+  padding-left: 25px;
+}
 .mPrompt .titleConfirmation {
   background-color: #0000ef;
   padding-left: 25px;
@@ -6330,20 +6334,19 @@ contact mjames@gmail.com
   width: 100px;
 }
 .mPrompt .mBoxPaneContentArea {
-  height: 50px;
+  height: auto;
 }
 .mPrompt .mBoxPaneContentArea .text {
   font-weight: bold;
+  height: auto;
+  margin: 0;
+  padding-left: 50px;
   text-align: left;
-  vertical-align: middle;
-  width: 320px;
-  height: 50px;
-  overflow: auto;
+  width: 314px;
 }
 .mPrompt .mBoxPaneContentArea .text ul {
-  padding: 0px;
-  margin: 0px;
-  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 .mPrompt .mBoxPaneContentArea .icon {
   width: 32px;
@@ -6353,6 +6356,7 @@ contact mjames@gmail.com
   margin-bottom: 9px;
   margin-top: 9px;
   background-repeat: no-repeat;
+  position: absolute;
 }
 .mPrompt .mBoxPaneContentArea .iconError {
   background-image: url("images/promptError.png");
@@ -6363,8 +6367,20 @@ contact mjames@gmail.com
 .mPrompt .mBoxPaneContentArea .iconConfirmation {
   background-image: url("images/promptConfirmation.png");
 }
+.mPrompt .mBoxPaneContentArea .iconAlert {
+  background-image: url("images/promptAlert.png");
+}
 .mPrompt .mBoxPaneContentArea .iconQuestion {
   background-image: url("images/promptQuestion.png");
+}
+.mPrompt .mBoxPaneContentArea {
+  min-height: 50px;
+  max-height: 100px;
+  overflow: auto;
+}
+.mPromptBox li {
+  text-align: left;
+  width: 310px;
 }
 /* 
  Table 
